@@ -1,11 +1,20 @@
 import React from 'react';
+import {Container } from '@material-ui/core'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-const App = () => {
-    return (
-        <div>
-            <h1>App</h1>
-        </div>
-    )
-};
+
+//import NavBar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+//import Auth from './components/Auth/Auth';
+
+const App = () => (
+    <BrowserRouter>
+        <Container maxWidth="false" disableGutters="true">
+            <Switch>
+                <Route path="/" exact component={Home} />
+            </Switch>
+        </Container>
+    </BrowserRouter>
+);
 
 export default App;
