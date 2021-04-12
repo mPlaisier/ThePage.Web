@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Paper, Box, Grid } from '@material-ui/core';
+import { Avatar, Button, TextField, Link, Paper, Box, Grid } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 
@@ -8,9 +8,7 @@ import useStyles from './styles';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © ThePage '}
-      {new Date().getFullYear()}
-      {'.'}
+      {'Copyright © ThePage '}{new Date().getFullYear()}{'.'}
     </Typography>
   );
 }
@@ -26,9 +24,7 @@ export default function Home() {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
+          <Typography component="h1" variant="h5">Sign in</Typography>
           <form className={classes.form} noValidate>
             <TextField
               variant="outlined"
@@ -36,7 +32,7 @@ export default function Home() {
               required
               fullWidth
               id="username"
-              label="Usename"
+              label="Username"
               name="text"
               autoFocus
             />
@@ -50,10 +46,6 @@ export default function Home() {
               type="password"
               id="password"
               autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
             />
             <Button
               type="submit"
