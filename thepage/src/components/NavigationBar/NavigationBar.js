@@ -27,40 +27,38 @@ const NavigationBar = () => {
                 <Typography variant="h5">ThePage</Typography>
             </Toolbar>
             <Toolbar component="nav" className={classes.toolbar} >
-                    <DashboardIcon color="white" className={classes.linkIcon} />
+                    <DashboardIcon className={classes.linkIcon} />
                     <Link
-                        noWrap
                         key='Dashboard'
                         to="/dashboard"
                         className={classes.toolbarLink}
                     >Dashboard</Link>
 
-                    <MenuBookIcon color="white" className={classes.linkIcon} />
+                    <MenuBookIcon className={classes.linkIcon} />
                     <Link
-                        noWrap
                         key='Books'
                         to="/books"
                         className={classes.toolbarLink}
                     >Books</Link>
 
-                    <PersonIcon color="white" className={classes.linkIcon} />
+                    <PersonIcon className={classes.linkIcon} />
                     <Link
-                        noWrap
                         key='Authors'
+                        to="/dashboard"
                         className={classes.toolbarLink}
                     >Authors</Link>
 
-                    <FaTheaterMasks color="white" className={classes.linkIcon} />
+                    <FaTheaterMasks className={classes.linkIcon} />
                     <Link
-                        noWrap
                         key='Genres'
+                        to="/dashboard"
                         className={classes.toolbarLink}
                     >Genres</Link>
 
-                    <IoLibraryOutline color="white" className={classes.linkIcon} />
+                    <IoLibraryOutline className={classes.linkIcon} />
                     <Link
-                        noWrap
                         key='Bookshelves'
+                        to="/dashboard"
                         className={classes.toolbarLink}
                     >Bookshelves</Link>
 

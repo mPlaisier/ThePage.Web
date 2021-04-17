@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom'
 
-
-import { Container, Grid, Typography } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 
 import NavigationBar from '../NavigationBar/NavigationBar';
 import Book from './Book/Book';
@@ -13,12 +13,13 @@ import useStyles from './styles';
 const Dashboard = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const books = useSelector(state => state.books);
 
     useEffect(() => {
-        dispatch(getBooks());
-    }, [dispatch]); 
+        dispatch(getBooks(history));
+    }, [dispatch, history]); 
 
     return (
         <div className={classes.root}>
