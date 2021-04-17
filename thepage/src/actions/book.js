@@ -1,15 +1,20 @@
-import { GET_BOOKS } from '../constants/actionTypes';
+import { GET_BOOKS, REFRESH_TOKENS } from '../constants/actionTypes';
 import * as api from '../api';
 
-export const getBooks = () => async (dispatch) => {
+import { refreshTokens } from './auth';
+
+export const getBooks = (history) => async (dispatch) => {
     
     try {
-        //TODO
-        //dispatch({ type: 'START_AUTH' });
+        //Refresh tokens if required
+        var refresh = await refreshTokens(dispatch, history);
+        if(refresh){
+            dispatch({ type: REFRESH_TOKENS, data: refresh});
+        }
 
         api.FetchBooks().then(
             (res) => {
-                console.log(res.data);
+                //console.log(res.data);
                 dispatch({ type: GET_BOOKS, data: res.data });
             },
             (error) => {
@@ -18,11 +23,7 @@ export const getBooks = () => async (dispatch) => {
                                 error.response.data.message) ||
                                 error.message ||
                                 error.toString();
-        
-                console.log("Error from webservice: " + message);
-                console.log(error)      ;
-                //TODO
-                //dispatch({ type: LOGIN_FAIL, data: message });
+                console.log("Error: " + message);
             });        
     } catch (error) {
         console.log("Book action - getBooks");

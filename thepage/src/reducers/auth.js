@@ -1,4 +1,4 @@
-import { AUTH, LOGOUT, LOGIN_FAIL } from '../constants/actionTypes';
+import { AUTH, LOGOUT, LOGIN_FAIL, REFRESH_TOKENS } from '../constants/actionTypes';
 
 const initialState = {
     username: 'destruction505',
@@ -18,7 +18,7 @@ const authReducer = (state = initialState, action) => {
         case 'START_AUTH':
             return { ...state, isLoading: true, error: '' };
         case AUTH:
-            localStorage.setItem('profile', JSON.stringify({ ...action?.data }))
+            localStorage.setItem('profile', JSON.stringify({ ...action?.data?.tokens }))
             return {
                 ...state,
                 error: '',
@@ -39,6 +39,9 @@ const authReducer = (state = initialState, action) => {
                 username: 'destruction505',
                 password: 'abc123456'
               };
+        case REFRESH_TOKENS:
+            localStorage.setItem('profile', JSON.stringify({ ...action?.data?.data }))
+            return state;
         default:
             return state;
     }
