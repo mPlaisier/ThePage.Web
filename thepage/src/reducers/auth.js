@@ -1,13 +1,14 @@
 import { AUTH, LOGOUT, LOGIN_FAIL, REFRESH_TOKENS } from '../constants/actionTypes';
 
 const initialState = {
-    username: 'destruction505',
-    password: 'abc123456',
+    username: '',
+    password: '',
     isLoading: false,
     error: '',
     isLoggedIn: false,
     data: ''
 };
+
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'FIELD': 
