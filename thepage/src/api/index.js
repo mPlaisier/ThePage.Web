@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getToken } from '../utils';
 
-const API = axios.create({ baseURL: 'https://thepageapi-stg.herokuapp.com/api'})
+const API = axios.create({ baseURL: process.env.REACT_APP_API_URL})
 
 API.interceptors.request.use((req) => {
     var token = getToken();
