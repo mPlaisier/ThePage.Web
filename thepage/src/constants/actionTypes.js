@@ -10,3 +10,6 @@ export const GET_BOOKS = 'GET_BOOKS';
 
 //AUTHORS
 export const GET_AUTHORS = 'GET_AUTHORS';
+
+//GENRES
+export const GET_GENRES = 'GET_GENRES';

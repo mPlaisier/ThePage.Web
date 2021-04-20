@@ -5,20 +5,20 @@ import { useHistory } from 'react-router-dom'
 import { Container, Grid } from '@material-ui/core';
 
 import NavigationBar from '../NavigationBar/NavigationBar';
-import Author from './Author/Author';
-import { getAuthors } from '../../actions/author'
+import Genre from './Genre/Genre';
+import { getGenres } from '../../actions/genre'
 
 import useStyles from './styles';
 
-const Authors = () => {
+const Genres = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const authors = useSelector(state => state.authors);
+    const genres = useSelector(state => state.genres);
 
     useEffect(() => {
-        dispatch(getAuthors(history));
+        dispatch(getGenres(history));
     }, [dispatch, history]); 
 
     return (
@@ -27,9 +27,9 @@ const Authors = () => {
             <Container>
                 <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                     {
-                        authors?.docs.map((author) => (
-                            <Grid key={author.id} item xs={12} sm={3}>
-                                <Author author={author} />
+                        genres?.docs.map((genre) => (
+                            <Grid key={genre.id} item xs={12} sm={3}>
+                                <Genre genre={genre} />
                             </Grid>
                         ))
                     }
@@ -39,4 +39,4 @@ const Authors = () => {
     );
 };
 
-export default Authors;
+export default Genres;

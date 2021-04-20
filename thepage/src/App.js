@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 import Books from './components/Books/Books';
 import Authors from './components/Authors/Authors';
+import Genres from './components/Genres/Genres';
 
 const App = () => (
     <BrowserRouter>
@@ -17,6 +18,7 @@ const App = () => (
                 <PrivateRoute path="/dashboard" exact component={Dashboard} />
                 <PrivateRoute path="/books" exact component={Books} />
                 <PrivateRoute path="/authors" exact component={Authors} />
+                <PrivateRoute path="/genres" exact component={Genres} />
             </Switch>
         </Container>
     </BrowserRouter>
