@@ -51,7 +51,7 @@ const NavigationBar = () => {
                     <FaTheaterMasks className={classes.linkIcon} />
                     <Link
                         key='Genres'
-                        to="/dashboard"
+                        to="/genres"
                         className={classes.toolbarLink}
                     >Genres</Link>
 

@@ -21,3 +21,6 @@ export const FetchBooks = () => API.get('/books/v2');
 
 //Authors
 export const FetchAuthors = () => API.get('/authors/v2');
+
+//Genres
+export const FetchGenres = () => API.get('/genres/v2');
