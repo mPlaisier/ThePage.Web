@@ -44,7 +44,7 @@ const NavigationBar = () => {
                     <PersonIcon className={classes.linkIcon} />
                     <Link
                         key='Authors'
-                        to="/dashboard"
+                        to="/authors"
                         className={classes.toolbarLink}
                     >Authors</Link>
 

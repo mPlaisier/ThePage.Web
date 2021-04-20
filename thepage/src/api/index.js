@@ -18,3 +18,6 @@ export const refreshTokens = (token) => API.post('/auth/refresh-tokens', token);
 
 //Books
 export const FetchBooks = () => API.get('/books/v2');
+
+//Authors
+export const FetchAuthors = () => API.get('/authors/v2');
