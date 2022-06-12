@@ -58,7 +58,7 @@ const NavigationBar = () => {
                     <IoLibraryOutline className={classes.linkIcon} />
                     <Link
                         key='Bookshelves'
-                        to="/dashboard"
+                        to="/bookshelves"
                         className={classes.toolbarLink}
                     >Bookshelves</Link>
 
