@@ -13,3 +13,6 @@ export const GET_AUTHORS = 'GET_AUTHORS';
 
 //GENRES
 export const GET_GENRES = 'GET_GENRES';
+
+//BOOKSHELVES
+export const GET_BOOKSHELVES = 'GET_BOOKSHELVES';
